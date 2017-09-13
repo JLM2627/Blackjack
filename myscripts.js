@@ -8,6 +8,7 @@ const cardValues = ['2', '3', '4', '5', '6', '7', '8', '9', '10', 'J', 'Q', 'K',
 
 const deck = [];// empty array for my newCard to be stored in
 const playerHand =[];
+const dealerHand =[];
 
 function createDeck () {
     for(var x = 0; x < cardSuites.length; x++) { // suit loop that will run four times
@@ -28,21 +29,21 @@ function createDeck () {
     return deck;
 };
 console.log(createDeck());
-function shuffle()
+
+
+function deal()
 {
-    
     for (var i = 0; i < 2; i++)//per 1000 runs
     {
-        //let card1 = Math.floor((Math.random() * deck.length));//generates random card between 0 and 52
         playerHand.push(deck[Math.floor(Math.random() * deck.length)]);//generates random card between 0 and 52
-        //let x = deck[card1];
-        console.log(hand)
-        //deck[card1] = deck[card2];// switches locations
-        //deck[card2] = x;
-        //console.log(x);
+        console.log(playerHand)
+        dealerHand.push(deck[Math.floor(Math.random() * deck.length)]);//generates random card between 0 and 52
+        console.log(dealerHand)
+        
+        
 
     }
 };
 
- shuffle();
+ deal();
 });
