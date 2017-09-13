@@ -1,3 +1,4 @@
+
 const cardSuites = ['hearts', 'clubs', 'spades' , 'diamonds'];
 // array of all four suites
 const cardValues = ['2', '3', '4', '5', '6', '7', '8', '9', '10', 'J', 'Q', 'K', 'A'];
@@ -16,7 +17,7 @@ function createDeck () {
             // this cardValue loop will run 13 times
             // 13 individual cardValues * 4 cardSuites = 52 cards
             var newCard = {
-                suit: cardSuites[x],
+                suite: cardSuites[x],
                 value: cardValues[y]
                 // once newCard is created using cardSuites and cardValues, starting at index [0]
             };
