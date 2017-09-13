@@ -24,7 +24,7 @@ function createDeck () {
              deck.push(card);
         
 
-        }
+      }
     }
     return deck;
 };
