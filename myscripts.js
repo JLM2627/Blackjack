@@ -1,10 +1,12 @@
-
+// $(() => {
+    //js document ready
+    //console.log()
 const cardSuites = ['hearts', 'clubs', 'spades' , 'diamonds'];
 // array of all four suites
 const cardValues = ['2', '3', '4', '5', '6', '7', '8', '9', '10', 'J', 'Q', 'K', 'A'];
 // array of values for card(listed as strings? strings vs strings and integers)
 
-var deck = [];// empty array for my newCard to be stored in
+let deck = [];// empty array for my newCard to be stored in
 
 function createDeck () {
     
@@ -21,13 +23,14 @@ function createDeck () {
                 value: cardValues[y]
                 // once newCard is created using cardSuites and cardValues, starting at index [0]
             };
-            deck.push(newCard);
-            console.log(deck)
+            ///deck.push(newCard);
+            //console.log(deck)
                 // for this array, we are going to push my newCard into deck
             
 
 
-        
+        deck.push(newCard)
+        //(newCArd(cardSuites[x], cardValues[y]));
 
 
 
@@ -43,3 +46,4 @@ function createDeck () {
     }
     //console.log(deck)
 }
+// });
