@@ -8,9 +8,23 @@ $(() => {
     const dealerHand = [];
     const player = [];
     const dealer = [];
+    let totalWorthP = 0;
+    let totalWorthD = 0;
     const score = [];
     //const card =[];
-
+    function counterP() {
+        totalWorthP = playerHand.reduce(function(whatever, asif){
+            return whatever + asif.worth;
+        }, 0)
+        console.log(totalWorthP);
+    }
+    function counterD() {
+        totalWorthD = dealerHand.reduce(function(whatever, asif){
+            return whatever + asif.worth;
+        }, 0)
+        console.log(totalWorthD);
+    }
+    
     function createDeck() {
         // let worth = 0;
         for (var x = 0; x < cardSuites.length; x++) { // suit loop that will run four times
@@ -39,7 +53,7 @@ $(() => {
         }
         return deck;
     }
-
+//
 
     function deal() {
         for (var i = 0; i < 2; i++)//
@@ -47,6 +61,8 @@ $(() => {
             playerHand.push(deck[Math.floor(Math.random() * deck.length)]);//generates random card between 0 and 52
             dealerHand.push(deck[Math.floor(Math.random() * deck.length)]);//generates random card between 0 and 52
         }
+
+        
         console.log(playerHand)
          console.log(dealerHand)
     }
@@ -55,8 +71,11 @@ $(() => {
         console.log("i work");
         createDeck();
         deal();
+        counterP();
+        counterD();
     });
-
+    
+    
     
 
     
@@ -71,7 +90,10 @@ $(() => {
     $("#hitBtn").on("click", function () {
       console.log("i work");
         dealOneCard();
-       
+        counterP();
+       console.log(playerHand);
+       counterD();
+       console.log(dealerHand);
  
 
     });
@@ -110,3 +132,9 @@ $(() => {
       //  console.log("i work")
         //handResult();
     //})
+
+
+
+   // function addCards {
+    //    for(var i = 0; i < 1; i++))
+    //}
