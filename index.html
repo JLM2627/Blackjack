@@ -11,21 +11,42 @@
 </head>
 
 <body>
-    <div class = "blackjack game">
-        <h1> Blackjack</h1>
-        <input type="button" class= "btn" value ="deal" onclick ="start()" / >
-        <input type="button" class= "btn" value ="hit" onclick ="hit()" / >
-        <input type="button" class= "btn" value ="stay" onclick ="stay()" / >
-    <div id="players" class= "players"></div>
-    <div id ="deck" class= "deck"></div>
-
-    <script
-    src="https://code.jquery.com/jquery-3.2.1.min.js"
-    integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
-    crossorigin="anonymous"></script>
-   
+  
+    <div id="container">
+        <div class="images">
+            <div id="playerhand">
+            </div>
+            <div id="dealerhand">
+            </div>
+        </div>
+        <div class="buttons">
+            <div class = "deal">
+                <button id="dealBtn">Deal</button>
+            <div class = "reset" >
+                <button id="resetBtn">Reset</button>
+            </div>
+            <div class = "hit">
+                <button id="hitBtn">Hit</button>
+            </div>
+            <div class = "stand">
+                    <button id="standBtn">Stand</button>
+            </div>
+        </div>
+  
+            Your score :<input type="text" id="playersum" value="">
+            Dealer score :<input type="text" id="dealersum" value="">
+        </div>
+        <div class="result">
+            <div id="show">Result : <input type="text" id="resultbox"></div>
+            <div id="counter">Wins Counter : <input type="number" id="winscounter"></div>
+        </div>
+    
+        <script src="https://code.jquery.com/jquery-3.2.1.min.js"
+        integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+        crossorigin="anonymous"></script>
+        <script src="./myscripts.js"></script>
     </div>
-    <script src="./myscripts.js"></script>
+
 </body>
 
 </html>
