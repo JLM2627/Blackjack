@@ -8,16 +8,20 @@ const playerHand =[];
 const dealerHand =[];
 
     function createDeck () {
+        let worth = 0;
         for(var x = 0; x < cardSuites.length; x++) { // suit loop that will run four times
             for(var y = 0; y < cardValues.length; y++) {
-                var card = {
-                suite: cardSuites[x],
-                value: cardValues[y]
-                };
+                let worth = parseInt(cardValues[x]);
+                if(cardValues[x] === "J" || cardValues[x] === "Q" || cardValues[x] === "K")
+                    worth = 10;
+                if(cardValues[x] === "A")
+                   worth = 11;
+
+            }
+                var card = {suite: cardSuites[x], value: cardValues[y], worth: worth };
              deck.push(card);
-            }   
-        }   
-    return deck;
+            }  
+            return deck; 
 };
     console.log(createDeck());
 
