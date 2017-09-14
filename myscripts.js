@@ -37,8 +37,6 @@ $(() => {
             }
 
         }
-        // var card = {suite: cardSuites[x], value: cardValues[y], worth: worth };
-        // deck.push(card);
         return deck;
     }
 
@@ -50,40 +48,45 @@ $(() => {
             dealerHand.push(deck[Math.floor(Math.random() * deck.length)]);//generates random card between 0 and 52
         }
         console.log(playerHand)
-        console.log(dealerHand)
-        //firstHandResult();
-        dealOneCard();
-    };
-
-    //function firstHandResult() {
-       // if (playerHand === 21 && dealerHand === 21) {
-           // console.log("tie");
-       // } else if (dealerHand === 21) {
-           // console.log("Dealer wins!");
-       // } else if (playerHand === 21) {
-           // console.log("You Win!");
-     //   }
-  //  }
-
+         console.log(dealerHand)
+    }
+         
     $("#dealBtn").on("click", function () {
         console.log("i work");
         createDeck();
         deal();
-    })
+    });
 
+    
 
+    
+    
     function dealOneCard(){
             playerHand.push(deck[Math.floor(Math.random() * deck.length)]);
+    }
             console.log(playerHand)
             console.log(dealerHand)
-    }
+    
 
     $("#hitBtn").on("click", function () {
-        console.log("i work");
+      console.log("i work");
         dealOneCard();
        
-    })
+ 
 
+    });
+
+
+});
+//You could use jQuery for events. User clicks on card => run function
+// stay dealer needs to be at 21. saying game is over
+
+//.reduce
+//counter
+//dealertotal
+//var sum = [1, 2, 3].reduce(
+  //  function(total, num){ return total + num }
+   // , 0)
     //function handResult() {
       //  if (playerHand === 21 && dealerHand === 21) {
         //    console.log("tie");
@@ -102,11 +105,8 @@ $(() => {
     //$("#stayBtn").on("click", function () {
       //  console.log("i work")
         //handResult();
+    //}
+    //$("#stayBtn").on("click", function () {
+      //  console.log("i work")
+        //handResult();
     //})
-
-    });
-//You could use jQuery for events. User clicks on card => run function
-// stay dealer needs to be at 21. saying game is over
-
-//.reduce
-//counter
