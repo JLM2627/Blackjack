@@ -6,6 +6,9 @@ $(() => {
     const deck = [];
     const playerHand = [];
     const dealerHand = [];
+    const player = [];
+    const dealer = [];
+    const score = [];
     //const card =[];
 
     function createDeck() {
@@ -48,18 +51,19 @@ $(() => {
         }
         console.log(playerHand)
         console.log(dealerHand)
-        firstHandResult();
+        //firstHandResult();
+        dealOneCard();
     };
 
-    function firstHandResult() {
-        if (playerHand === 21 && dealerHand === 21) {
-            console.log("tie");
-        } else if (dealerHand === 21) {
-            console.log("Dealer wins!");
-        } else if (playerHand === 21) {
-            console.log("You Win!");
-        }
-    }
+    //function firstHandResult() {
+       // if (playerHand === 21 && dealerHand === 21) {
+           // console.log("tie");
+       // } else if (dealerHand === 21) {
+           // console.log("Dealer wins!");
+       // } else if (playerHand === 21) {
+           // console.log("You Win!");
+     //   }
+  //  }
 
     $("#dealBtn").on("click", function () {
         console.log("i work");
@@ -80,7 +84,29 @@ $(() => {
        
     })
 
-
+    //function handResult() {
+      //  if (playerHand === 21 && dealerHand === 21) {
+        //    console.log("tie");
+       // } else if (dealerHand === 21) {
+            //console.log("Dealer wins!")
+        //} else if (playerHand === 21) {
+          //  console.log("You Win!")
+       // } else if (dealerHand = 17) {
+         //   console.log("hit or stay player?");
+       // } else if (dealerHand > 21) {
+         //   console.log("dealer busts, player wins!")
+        //}
+    
+    //}
+    
+    //$("#stayBtn").on("click", function () {
+      //  console.log("i work")
+        //handResult();
+    //})
 
     });
 //You could use jQuery for events. User clicks on card => run function
+// stay dealer needs to be at 21. saying game is over
+
+//.reduce
+//counter
