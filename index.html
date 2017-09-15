@@ -5,48 +5,35 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
+    <title>Blackjacj!</title>
     <link rel="stylesheet" type="text/css" href="main.css">
 
 </head>
 
 <body>
-  
-    <div id="container">
-        <div class="players">
-            <div id="playerhand">
-            </div>
-            <div id="dealerhand">
-            </div>
-        </div>
-        <div class="buttons">
-                
-            <div class = "deal">
-                <button id="deal">Deal</button>
-            </div>
-            <div class = "hit">
-                <button id="hit">Hit</button>
-            </div>
-            <div class = "stay">
-                    <button id="stay">Stay</button>
-            </div>
-            
 
-        </div>
-  
-            Your score :<input type="text" id="playersum" value="">
-            Dealer score :<input type="text" id="dealersum" value="">
-        </div>
-        <div class="result">
-            <div id="show">Result : <input type="text" id="resultbox"></div>
-            <div id="counter">Wins Counter : <input type="number" id="winscounter"></div>
-        </div>
-    
-        <script src="https://code.jquery.com/jquery-3.2.1.min.js"
-        integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
-        crossorigin="anonymous"></script>
-        <script src="./myscripts.js"></script>
-    </div>
+    <div id="container">
+
+        <div class="players">
+            <div id="dealerHand"></div>
+            <div id="yourHand"></div>
+            <div id="yourScore">Your Score: <span class="digits">0</span> Record: <span id="wins">0</span>&nbsp;/&nbsp;<span id="losses">0</span></div>
+            <div class="Buttons">
+                <button id="deal">Deal</button>
+                <button id="hitMe">Hit</button>
+                <button id="stand">Stay</button></div>
+            <div> Your score :<input type="text" id="playersum" value="">
+                <div>Dealer score :<input type="text" id="dealersum" value="">
+                    <div class="result">
+                        <div id="show">Result : <input type="text" id="resultbox"></div>
+                        <div id="counter">Wins Counter : <input type="number" id="winscounter"></div>
+                    </div>
+
+
+                    <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+                        crossorigin="anonymous"></script>
+                    <script src="./myscripts.js"></script>
+                </div>
 
 </body>
 
