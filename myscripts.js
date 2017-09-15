@@ -19,8 +19,8 @@ $(() => {
         totalWorthP = playerHand.reduce(function (whatever, asif) {
             return whatever + asif.worth;
         }, 0)
-        //console.log(totalWorthP);
-        print(totalWorthP);
+        console.log(totalWorthP);
+        (totalWorthP);
     }
     function counterD() {
         totalWorthD = dealerHand.reduce(function (whatever, asif) {
@@ -77,7 +77,7 @@ $(() => {
         //alert(playerHand);
         counterD();
         //alert(dealerHand);
-        console.log(dealerHand)
+        //console.log(dealerHand)
         handResult();
     });
 
@@ -98,9 +98,9 @@ $(() => {
         //deal(); 
         dealOneCard();
         counterP();
-        print(playerHand);
+        console.log(playerHand);
         counterD();
-        print(dealerHand);
+        console.log(dealerHand);
         handResult();
     });
 
@@ -146,14 +146,16 @@ $(() => {
         //dealOneCard();
         dealAnotherCard()
         counterP();
-        console.log(playerHand);
+        //console.log(playerHand);
         //alert(playerHand);
         counterD();
-        console.log(dealerHand);
+        //console.log(dealerHand);
+    
 
         handResult();
         $("div.putdealercardshere").append(`<img src= `+dealerHand[dealerHand.length-1].imgsource +` id =" move" >`);
-
     })
+
+    
 });
 
