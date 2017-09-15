@@ -19,7 +19,8 @@ $(() => {
         totalWorthP = playerHand.reduce(function (whatever, asif) {
             return whatever + asif.worth;
         }, 0)
-        console.log(totalWorthP);
+        //console.log(totalWorthP);
+        print(totalWorthP);
     }
     function counterD() {
         totalWorthD = dealerHand.reduce(function (whatever, asif) {
@@ -59,8 +60,8 @@ $(() => {
         for (var i = 0; i < 2; i++) {
             playerHand.push(deck[Math.floor(Math.random() * deck.length)]);//generates random card between 0 and 52
             dealerHand.push(deck[Math.floor(Math.random() * deck.length)]);//generates random card between 0 and 52
-            $("div.putplayercardshere").append(`<img src= `+playerHand[i].imgsource +` id = "blah">`);
-            $("div.putdealercardshere").append(`<img src= `+dealerHand[i].imgsource +` id= "hey">`);
+            $("div.putplayercardshere").append(`<img src= `+playerHand[i].imgsource +` id = "move">`);
+            $("div.putdealercardshere").append(`<img src= `+dealerHand[i].imgsource +` id= "move">`);
             
             // append card where the index of the array is i. ex dealerhand[i].imgsource, using jQuery
         }
@@ -73,7 +74,10 @@ $(() => {
         createDeck();
         deal();
         counterP();
+        //alert(playerHand);
         counterD();
+        //alert(dealerHand);
+        console.log(dealerHand)
         handResult();
     });
 
@@ -84,7 +88,7 @@ $(() => {
 
     function dealOneCard() {
         playerHand.push(deck[Math.floor(Math.random() * deck.length)]);
-        $("div.dealonecardhere").append(`<img src= `+playerHand[playerHand.length-1].imgsource +` id = "nice">`);
+        $("div.putplayercardshere").append(`<img src= `+playerHand[playerHand.length-1].imgsource +` id = "move">`);
        // $("div.putdealercardshere").append(`<img src= `+dealerHand[dealerHand.length-1].imgsource +` id= "hey">`);
 
     };
@@ -94,9 +98,9 @@ $(() => {
         //deal(); 
         dealOneCard();
         counterP();
-        console.log(playerHand);
+        print(playerHand);
         counterD();
-        console.log(dealerHand);
+        print(dealerHand);
         handResult();
     });
 
@@ -111,24 +115,24 @@ $(() => {
 
     function handResult() {
         if (totalWorthP === 21 && totalWorthD === 21) { 
-            setTimeout(function(){ alert("Tie! Game over!"); }, 3000);
+            setTimeout(function(){ alert("Tie! Game over!"); }, 1000);
         } else if (totalWorthD === 21) {
-            setTimeout(function(){ alert("Dealer Wins!"); }, 3000);
+            setTimeout(function(){ alert("Dealer Wins!"); }, 1000);
            // alert("Dealer wins!")
         } else if (totalWorthP === 21) {
-            setTimeout(function(){ alert("You win!"); }, 3000);
+            setTimeout(function(){ alert("You win!"); }, 1000);
            // alert("You Win!")
         } else if (totalWorthD === 17) {
-            setTimeout(function(){ alert("Hit or stay player!"); }, 3000);
+            setTimeout(function(){ alert("Hit or stay player!"); }, 1000);
             //alert("hit or stay player?");
         } else if (totalWorthD > 21) {
-            setTimeout(function(){ alert("Dealer busts, player wins!"); }, 3000);
+            setTimeout(function(){ alert("Dealer busts, player wins!"); }, 1000);
             //alert("dealer busts, player wins!")
         } else if (totalWorthP > 21) {
-            setTimeout(function(){ alert("You lose!"); }, 3000);
+            setTimeout(function(){ alert("You lose!"); }, 1000);
             //alert("You bust!")
         } else if (totalWorthP < 21) {
-            setTimeout(function(){ alert("Your score is under 21. Would you like to hit?!"); }, 3000);
+            setTimeout(function(){ alert("Your score is under 21. Would you like to hit?!"); }, 1000);
             //alert("You're under 21. Do you want hit!?")
         }
         
@@ -143,11 +147,12 @@ $(() => {
         dealAnotherCard()
         counterP();
         console.log(playerHand);
+        //alert(playerHand);
         counterD();
         console.log(dealerHand);
 
         handResult();
-        $("div.stand").append(`<img src= `+dealerHand[dealerHand.length-1].imgsource +` id= "help">`);
+        $("div.putdealercardshere").append(`<img src= `+dealerHand[dealerHand.length-1].imgsource +` id =" move" >`);
 
     })
 });
