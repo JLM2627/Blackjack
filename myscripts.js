@@ -43,7 +43,8 @@ $(() => {
                 let card = {
                     suit: cardSuites[x],
                     value: cardValue,
-                    worth: worth
+                    worth: worth,
+                    imgsource:  "PNG-cards-1.3/"+cardValues[y] +"_of_"+cardSuites[x]+".png"
                 }
                 deck.push(card);
 
@@ -58,13 +59,17 @@ $(() => {
         for (var i = 0; i < 2; i++) {
             playerHand.push(deck[Math.floor(Math.random() * deck.length)]);//generates random card between 0 and 52
             dealerHand.push(deck[Math.floor(Math.random() * deck.length)]);//generates random card between 0 and 52
+            $("div.putplayercardshere").append(`<img src= `+playerHand[i].imgsource +` id = "blah">`);
+            $("div.putdealercardshere").append(`<img src= `+dealerHand[i].imgsource +` id= "hey">`);
+            
+            // append card where the index of the array is i. ex dealerhand[i].imgsource, using jQuery
         }
         console.log(playerHand)//DO NOT DELETE THESE LINES OF CODE
         console.log(dealerHand)
     }
 
     $("#deal").on("click", function () {
-        console.log("i work");
+        console.log("i work 1");
         createDeck();
         deal();
         counterP();
@@ -79,11 +84,13 @@ $(() => {
 
     function dealOneCard() {
         playerHand.push(deck[Math.floor(Math.random() * deck.length)]);
+        $("div.dealonecardhere").append(`<img src= `+playerHand[playerHand.length-1].imgsource +` id = "nice">`);
+       // $("div.putdealercardshere").append(`<img src= `+dealerHand[dealerHand.length-1].imgsource +` id= "hey">`);
 
-    }
+    };
 
-    $("#hit").on("click", function () {
-        console.log("i work");
+    $("#hitMe").on("click", function () {
+        console.log("i work 2");
         //deal(); 
         dealOneCard();
         counterP();
@@ -97,29 +104,40 @@ $(() => {
     function dealAnotherCard() {
 
         dealerHand.push(deck[Math.floor(Math.random() * deck.length)]);
+        //$("div.putdealercardshere").append(`<img src= `+dealerHand[dealerHand.length-1].imgsource +` id= "hey">`);
 
     }
 
 
     function handResult() {
-        if (totalWorthP === 21 && totalWorthD === 21) {
-            console.log("tie");
+        if (totalWorthP === 21 && totalWorthD === 21) { 
+            setTimeout(function(){ alert("Tie! Game over!"); }, 3000);
         } else if (totalWorthD === 21) {
-            console.log("Dealer wins!")
+            setTimeout(function(){ alert("Dealer Wins!"); }, 3000);
+           // alert("Dealer wins!")
         } else if (totalWorthP === 21) {
-            console.log("You Win!")
+            setTimeout(function(){ alert("You win!"); }, 3000);
+           // alert("You Win!")
         } else if (totalWorthD === 17) {
-            console.log("hit or stay player?");
+            setTimeout(function(){ alert("Hit or stay player!"); }, 3000);
+            //alert("hit or stay player?");
         } else if (totalWorthD > 21) {
-            console.log("dealer busts, player wins!")
+            setTimeout(function(){ alert("Dealer busts, player wins!"); }, 3000);
+            //alert("dealer busts, player wins!")
         } else if (totalWorthP > 21) {
-            console.log("You bust!")
+            setTimeout(function(){ alert("You lose!"); }, 3000);
+            //alert("You bust!")
         } else if (totalWorthP < 21) {
-            console.log("You're under 21. Do you want hit!?")
+            setTimeout(function(){ alert("Your score is under 21. Would you like to hit?!"); }, 3000);
+            //alert("You're under 21. Do you want hit!?")
         }
+        
+        
     }
 
-    $("#stay").on("click", function () {
+
+    $("#stand").on("click", function () {
+        console.log("i work 3");
         // deal();
         //dealOneCard();
         dealAnotherCard()
@@ -129,6 +147,7 @@ $(() => {
         console.log(dealerHand);
 
         handResult();
+        $("div.stand").append(`<img src= `+dealerHand[dealerHand.length-1].imgsource +` id= "help">`);
 
     })
 });
