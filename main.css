@@ -1,11 +1,19 @@
-.container{
 
-}
 
 .body{
+    
 
 }
+
+.blackjackgame{
+    font-family: 'Playfair Display', serif;
+    
+    
+}
+
 #move{
     height: 150px;
     width: auto;
+    
+    
 }

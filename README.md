@@ -5,37 +5,19 @@ MVP = make dealer deal two cards to player
 
 wireframing can be seen at https://wireframe.cc/pro/pp/bbb848f5b109418
 Trello board at https://trello.com/b/ur5hvvzN/blackjack
-http://acbl.mybigcommerce.com/52-playing-cards/
-Synopsis
+BitBallon - http://jaymemarshallblackjack.bitballoon.com/
 
-At the top of the file there should be a short introduction and/ or overview that explains what the project is. This description should match descriptions added for package managers (Gemspec, package.json, etc.)
 
-This is version 1.0 of Blackjack. 
+This is version 1.0 of my first game created, Blackjack. The game currently works as is, and in version 2.0 I would like to incorporate more CSS styling to the game, along with a feature that keeps the dealers second card hidden until after the player decides to hit or stand. The player presses the deal button and and 4 cards are dealt out to the player and dealer. After the cards are dealt, the player can choose if he wants to to hit or stay depending on his card total, and the dealer will hit or stay depending if his cards are over of under 17. The game is over when one player either busts or gets closer to 21 than the other player.
+ 
 
-Code Example
+The game is constructed using HTML, CSS, javascript and jquery. The game was constructed in javascript using functions to create the logic of the game. After the logic was complete and in order, jquery was used to run the functions in the order needed to execute the different possible outcomes that could happen between the player and dealer. 
 
-Show what the library does as concisely as possible, developers should be able to figure out how your project solves their problem by looking at the code example. Make sure the API you are showing off is obvious, and that your code is short and concise.
 
-Motivation
 
+I chose to make blackjack due to the large amount of logic that was required in order to make the game run. My strong point does not lie in javascript and therefore I was hoping to strengthen my skills. I started working on this game on September 12, 2017 and have worked on this game in some capacity everyday since. 
 A short description of the motivation behind the creation and maintenance of the project. This should explain why the project exists.
 
-Installation
 
-Provide code examples and explanations of how to get the project.
-
-API Reference
-
-Depending on the size of the project, if it is small and simple enough the reference docs can be added to the README. For medium size to larger projects it is important to at least provide a link to where the API reference docs live.
-
-Tests
-
+This Blackjack game was completely built in the console before ever weing run in the browser. I would create some of my logic and then before moving forward, would test that logic in the console, most often using console.log. 
 Describe and show how to run the tests with code examples.
-
-Contributors
-
-Let people know how they can dive into the project, include important links to things like issue trackers, irc, twitter accounts if applicable.
-
-License
-
-A short snippet describing the license (MIT, Apache, etc.)
